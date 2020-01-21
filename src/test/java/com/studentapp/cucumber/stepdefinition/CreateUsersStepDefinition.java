@@ -27,9 +27,10 @@ public class CreateUsersStepDefinition{
 		userMaps.forEach(row-> {
 			String name = row.get("name");
 			String job = row.get("job");
-			String designation = row.get("designation");
+			//String designation = row.get("designation");
 			//double age = Double.parseDouble(row.get("age"));
 			//users.add(new User(name ,job ,designation, age));
+			designation designation = Enum.valueOf(designation.class, row.get("designation"));
 			users.add(new User(name ,job ,designation));
 		});
 		payLoad.setUsers(users);
