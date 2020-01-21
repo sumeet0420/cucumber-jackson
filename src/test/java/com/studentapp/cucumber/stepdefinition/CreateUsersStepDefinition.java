@@ -20,7 +20,17 @@ public class CreateUsersStepDefinition{
 	
 	@Given("^the user wants to create a user$")
 	public void the_user_wants_to_create_a_user(DataTable table) throws JsonProcessingException {
-		List<User> users = table.asList(User.class);		 
+		//Modifying the way to create the List<Users> object. //Leveraging java8
+		//List<User> users = table.asList(User.class);
+		List<User> users = new ArrayList<User>();		 
+		List<Map<String, String>> userMaps = table.asMaps(String.class, String.class);
+		userMaps.forEach(row-> {
+			String name = row.get("name");
+			String job = row.get("job");
+			String designation = row.get("designation");
+			double age = Double.parseDouble(row.get("age"));
+			users.add(new User(name ,job ,designation, age));
+		});
 		payLoad.setUsers(users);
 	}
 	
