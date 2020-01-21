@@ -28,8 +28,9 @@ public class CreateUsersStepDefinition{
 			String name = row.get("name");
 			String job = row.get("job");
 			String designation = row.get("designation");
-			double age = Double.parseDouble(row.get("age"));
-			users.add(new User(name ,job ,designation, age));
+			//double age = Double.parseDouble(row.get("age"));
+			//users.add(new User(name ,job ,designation, age));
+			users.add(new User(name ,job ,designation));
 		});
 		payLoad.setUsers(users);
 	}
