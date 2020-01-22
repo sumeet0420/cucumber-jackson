@@ -9,11 +9,21 @@ public class User {
 	//@JsonInclude(Include.NON_EMPTY)
 	private String job;
 	private designation designation;
-	
-	public static enum designation {
-	ASSOCIATE, SENIOR_ASSOCIATE
+	public Double getAge() {
+		return age;
 	}
 
+	public void setAge(Double age) {
+		this.age = age;
+	}
+
+	private Double age;
+
+	public static enum designation {
+		ASSOCIATE,
+		SENIOR_ASSOCIATE
+	}
+	 
 	public String getName() {
 		return name;
 	}
@@ -38,10 +48,11 @@ public class User {
 		this.designation = designation;
 	}
 
-	public User(String name, String job, com.studentapp.models.User.designation designation) {
+	public User(String name, String job, designation designation, Double age) {
 		this.name = name;
 		this.job = job;
 		this.designation = designation;
+		this.age = age;
 	}
 		
 		
