@@ -1,5 +1,6 @@
 # https://agileforall.com/just-enough-regular-expressions-for-cucumber/
 Feature: To form the JSON from datatable
+
 @running
 Scenario: To verify that the user is able to create the <b>User Information</b>
 	Given the user wants to create a user
